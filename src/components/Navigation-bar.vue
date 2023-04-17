@@ -1,5 +1,5 @@
 <template>
-    <header :class="{ 'scrolled-nav' : scrollPosition }">
+    <header :class="{ 'scrolled-nav' : scrolledNav }">
         <nav>
             <div class="branding">
                 <img src="@/assets/logo.png" alt="Company Logo">
@@ -30,10 +30,43 @@ export default{
     name: "navigation_bar",
     data() {
         return {
-            scrollPosition: null,
-            mobile: true,
-            mobileNav: true,
+            scrolledNav: null,
+            mobile: null,
+            mobileNav: null,
             windowWidth: null,
+        };
+    },
+    created() {
+        window.addEventListener('resize', this.checkScreen);
+        this.checkScreen();
+
+    },
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll);
+    },
+    methods: {
+        toggleMobileNav() {
+            this.mobileNav = !this.mobileNav
+        },
+
+        updateScroll() {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > 50) {
+                this.scrolledNav = true;
+                return;
+            }
+            this.scrolledNav = false;
+        },
+
+        checkScreen() {
+            this.windowWidth = window.innerWidth;
+            if (this.windowWidth <= 750) {
+                this.mobile = true;
+                return;
+            }
+            this.mobile = false;
+            this.mobileNav = false; 
+            return;
         }
     }
 }
@@ -114,14 +147,61 @@ header {
             i {
                 cursor: pointer;
                 font-size: 24px;
-                transition: 0.8s ease all;
+                transition: 0.5s ease all;
             }
         }
 
         .icon-active {
             transform: rotate(180deg);
         }
+
+        .dropdown-nav {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            max-width: 250px;
+            height: 100%;
+            background-color: #fff;
+            top: 0;
+            left: 0;
+
+            li {
+                margin-left: 0;
+                .link {
+                    color: black;
+                }
+            }
+        }
+        
+        .mobile-nav-enter-active,
+        .mobile-nav-leave-active {
+            transition: 0.5s ease all;
+        }
+
+        .mobile-nav-enter-from,
+        .mobile-nav-leave-to {
+            transform: translateX(-250px);
+        }
+
+        mobile-nav-enter-to {
+            transform: translateX(0px);
+        }
     }
 }
+    .scrolled-nav {
+        background-color: #000;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.6);
 
+        nav {
+            padding: 8px 0;
+
+            .branding {
+                img {
+                    width: 40px;
+                    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+                }
+            }
+        }
+    }
 </style>
