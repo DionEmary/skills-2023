@@ -4,7 +4,7 @@
   <Navigation_Bar/>
   <RouterView/>
   <div class="footer">
-
+    Footer
   </div>
 </div>
 </template>
@@ -45,9 +45,11 @@ export default {
 
 <style scoped>
 .footer {
+  color: #fff;
   width: 100%;
   height: 300px;
-  background-color: gray;
+  background-color: rgba(50, 50, 50, 0.8);
+  
 }
 .navItem {
   width: 170px;
