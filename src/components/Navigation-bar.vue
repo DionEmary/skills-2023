@@ -7,8 +7,8 @@
             <ul v-show="!mobile" class="navigation">
                 <li><RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink></li>
                 <li><RouterLink class="link" :to="{ name: 'about' }">About</RouterLink></li>
-                <li><RouterLink class="link" :to="{ name: 'contact' }">Contact Us</RouterLink></li>
-                <li><RouterLink class="link" :to="{ name: '' }"></RouterLink></li>
+                <li><RouterLink class="link" :to="{ name: 'contact' }">Placeholder</RouterLink></li>
+                <li><RouterLink class="link" :to="{ name: '' }">Placeholder</RouterLink></li>
             </ul>
             <div class="icon">
                 <i @click="toggleMobileNav" v-show="mobile" class="fa-solid fa-bars" :class="{ 'icon-active' : mobileNav }"></i>
@@ -17,8 +17,8 @@
                 <ul v-show="mobileNav" class="dropdown-nav">
                     <li><RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink></li>
                     <li><RouterLink class="link" :to="{ name: 'about' }">About</RouterLink></li>
-                    <li><RouterLink class="link" :to="{ name: 'contact' }">Contact Us</RouterLink></li>
-                    <li><RouterLink class="link" :to="{ name: '' }"></RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: 'contact' }">Placeholder</RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: '' }">Placeholder</RouterLink></li>
                 </ul>
             </transition>
         </nav>
