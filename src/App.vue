@@ -47,7 +47,7 @@ export default {
 .footer {
   color: #fff;
   width: 100%;
-  height: 300px;
+  height: 200px;
   background-color: rgba(50, 50, 50, 0.8);
   
 }
