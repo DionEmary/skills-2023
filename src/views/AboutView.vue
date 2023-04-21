@@ -7,7 +7,7 @@
     </div>
     </template>
     
-    <style>
+    <style lang="scss" scoped>
     .header {
       width: 100%;
       height: 750px;
@@ -15,7 +15,7 @@
     
     .body {
         width: 100%;
-        height: 500px;
+        height: auto;
     }
     </style>
     

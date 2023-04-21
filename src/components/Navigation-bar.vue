@@ -6,9 +6,10 @@
             </div>
             <ul v-show="!mobile" class="navigation">
                 <li><RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink></li>
-                <li><RouterLink class="link" :to="{ name: 'about' }">About</RouterLink></li>
-                <li><RouterLink class="link" :to="{ name: 'contact' }">Placeholder</RouterLink></li>
-                <li><RouterLink class="link" :to="{ name: '' }">Placeholder</RouterLink></li>
+                <li><RouterLink class="link" :to="{ name: 'about' }">About Us</RouterLink></li>
+                <li><RouterLink class="link" :to="{ name: 'services' }">Services</RouterLink></li>                
+                <li><RouterLink class="link" :to="{ name: 'contact' }">Contact Us</RouterLink></li>
+                <li><RouterLink class="link" :to="{ name: 'review' }">Leave a Review</RouterLink></li>
             </ul>
             <div class="icon">
                 <i @click="toggleMobileNav" v-show="mobile" class="fa-solid fa-bars" :class="{ 'icon-active' : mobileNav }"></i>
@@ -16,9 +17,10 @@
             <transition name="mobile-nav">
                 <ul v-show="mobileNav" class="dropdown-nav">
                     <li><RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink></li>
-                    <li><RouterLink class="link" :to="{ name: 'about' }">About</RouterLink></li>
-                    <li><RouterLink class="link" :to="{ name: 'contact' }">Placeholder</RouterLink></li>
-                    <li><RouterLink class="link" :to="{ name: '' }">Placeholder</RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: 'about' }">About Us</RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: 'services' }">Services</RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: 'contact' }">Contact Us</RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: 'review' }">Leave a Review</RouterLink></li>
                 </ul>
             </transition>
         </nav>
@@ -108,7 +110,7 @@ header {
         }
 
         .link {
-            font-size: 14px;
+            font-size: 13.5px;
             transition: 0.5s ease all;
             padding-bottom: 4px;
             border-bottom: 1px solid transparent;

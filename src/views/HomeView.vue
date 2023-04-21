@@ -31,10 +31,16 @@
   <div class="mobile" v-if="mobile">
     <div class="body">
       <div class="mobile-item">
-
+        <div class="textWrap">
+          <h2>Placeholder</h2>
+          <p>
+            This will be filled with text describing a aspect of the company/service <br>
+            This could also be a slight snippet of the "About Us" for the Company <br>
+          </p>
+        </div>
       </div>
       <div class="mobile-item">
-        <div id="textWrapTwo">
+        <div class="textWrap">
           <h2>Placeholder</h2>
           <p>
             This will be filled with text describing a aspect of the company/service <br>
@@ -72,7 +78,7 @@
   }
   </script>
   
-  <style lang="scss">
+  <style lang="scss" scoped>
     .mobile {
       .body {
         display: flex;
@@ -82,9 +88,9 @@
           width: 100%;
           height: 400px;
 
-          #textWrapTwo {
+          .textWrap {
             background-color: rgba(0, 0, 0, 0.75);
-            margin: 10px;
+            margin: 30px;
             height: 90%;
 
             h2 {
@@ -115,11 +121,13 @@
     display: flex;
 
     img {
-      padding: 40px;
+      padding: 30px;
+      width: 50%;
     }
 
     .itemText {
       padding: 60px;
+      width: 50%;
 
       h2 {
         font-size: 62px;
