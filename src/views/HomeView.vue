@@ -1,7 +1,5 @@
 <template>
-  <div class="header">
-      <!-- <img class="header" src="https://placeholder.pics/svg/2000x1500/BFBBFF/%20">  -->
-  </div>
+  <div class="header"></div>
   <div class="desktop" v-if="!mobile">
     <div class="body">
       <div class="item">
