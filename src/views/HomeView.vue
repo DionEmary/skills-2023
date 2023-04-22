@@ -85,11 +85,13 @@
         .mobile-item {
           width: 100%;
           height: 400px;
+          background-image: url('../assets/hero-bg.png');
 
           .textWrap {
-            background-color: rgba(0, 0, 0, 0.75);
+            background-color: rgba(255, 255, 255, 0.15);
             margin: 30px;
             height: 90%;
+            border-radius: 10px;
 
             h2 {
               font-size: 42px;
@@ -121,24 +123,48 @@
     img {
       padding: 30px;
       width: 50%;
+      border-radius: 40px;
     }
 
     .itemText {
       padding: 60px;
       width: 50%;
+      margin: 30px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.15);
 
-      h2 {
-        font-size: 62px;
-        font-weight: 500;
-        border-bottom: 2px solid;
-        margin-bottom: 20px;
-      }
+        h2 {
+          font-size: 58px;
+          font-weight: 500;
+          border-bottom: 2px solid;
+          border-color: #fff;
+          margin: 0 3% 20px 1%;
+          color: #fff;
+          padding-right: 10px;
+        }
 
-      p {
-        font-size: 22px;
-        margin-bottom: 20px;
-        padding-right: 80px;
-      }
+        p {
+          font-size: 26px;
+          margin: 0 2% 20px 2%;
+          color: #fff;
+        }
+
+        a {
+          font-size: 26px;
+          margin: 0 2% 20px 2%;
+          border-width: 2px;
+          border-color: #fff;
+          color: #fff;
+          border-radius: 10px;
+          padding: 10px 15% 10px 15%;
+          transition: 0.5s;
+
+          &:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+          }
+        }
     }
   }
   
@@ -154,5 +180,6 @@
   .body {
       width: 100%;
       height: auto;
+      background-image: url('../assets/hero-bg.png');
   }
   </style>

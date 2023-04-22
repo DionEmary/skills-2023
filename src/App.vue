@@ -48,7 +48,7 @@ export default {
   color: #fff;
   width: 100%;
   height: 200px;
-  background-color: rgba(50, 50, 50, 0.8);
+  background-color: #363636;
   
 }
 .navItem {
