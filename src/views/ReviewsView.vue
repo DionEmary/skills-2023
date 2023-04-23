@@ -1,39 +1,66 @@
 <template>
     <div class="header"></div>
-    <div class="body">
 
         <div class="desktop" v-if="!mobile">
-
+            <div class="body">
+                <!-- <div class="reviewItem" v-for="reviews in reviewsArr"> -->
+                    <div>Hello</div>
+                    <button @click="test()">Test</button>
+                <!-- </div> -->
+            </div>
         </div>
 
         <div class="mobile" v-if="mobile">
-            Mobile
+            <div class="body">
+                
+            </div>
         </div>
 
-    </div>
     </template>
 
     <script>
+        import { collection, getDocs } from "firebase/firestore"
+        import { db } from '@/firebase'
+
         export default {
             data() {
                 return {
                     mobile: null,
+                    reviewsArr: [],
                 }
             },
-            created() {
-        window.addEventListener('resize', this.checkScreen);
-        this.checkScreen();
-
-        },
-        methods: {
-            checkScreen() {
-                this.windowWidth = window.innerWidth;
-                if (this.windowWidth <= 1300) {
-                    this.mobile = true;
-                    return;
+            async mounted() {
+                const querySnapshot = await getDocs(collection(db, 'reviews'));
+                let arrReviews = []
+                    querySnapshot.forEach((doc) => {
+                    console.log(doc.id, " => ", doc.data());
+                    const reviews = {
+                        id: doc.id,
+                        content: doc.data().content,
+                        name: doc.data().name,
+                        rating: doc.data().rating,
                     }
-                this.mobile = false;
-                return;
+                    arrReviews.push(reviews)
+                });
+                this.reviewsArr.values = arrReviews;
+            },
+            created() {
+                window.addEventListener('resize', this.checkScreen);
+                this.checkScreen();
+
+            },
+            methods: {
+                checkScreen() {
+                    this.windowWidth = window.innerWidth;
+                    if (this.windowWidth <= 1300) {
+                        this.mobile = true;
+                        return;
+                    }
+                    this.mobile = false;
+                    return;
+                },
+                test() {
+                    console.log(this.reviewsArr)
                 }
             }
         }
@@ -42,7 +69,9 @@
     <style lang="scss" scoped>
 
     .desktop {
+        .reviewItem {
 
+        }
     }
 
     .mobile {
