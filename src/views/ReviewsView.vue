@@ -3,10 +3,11 @@
 
         <div class="desktop" v-if="!mobile">
             <div class="body">
-                <!-- <div class="reviewItem" v-for="reviews in reviewsArr"> -->
                     <div>Hello</div>
                     <button @click="test()">Test</button>
-                <!-- </div> -->
+                    <!-- <div class="review" v-for=" in arrReviews">
+
+                    </div> -->
             </div>
         </div>
 
@@ -26,23 +27,15 @@
             data() {
                 return {
                     mobile: null,
-                    reviewsArr: [],
                 }
             },
             async mounted() {
                 const querySnapshot = await getDocs(collection(db, 'reviews'));
                 let arrReviews = []
                     querySnapshot.forEach((doc) => {
-                    console.log(doc.id, " => ", doc.data());
-                    const reviews = {
-                        id: doc.id,
-                        content: doc.data().content,
-                        name: doc.data().name,
-                        rating: doc.data().rating,
-                    }
-                    arrReviews.push(reviews)
+                    arrReviews.push(doc.data())
                 });
-                this.reviewsArr.values = arrReviews;
+                this.reviewsArr = arrReviews;
             },
             created() {
                 window.addEventListener('resize', this.checkScreen);

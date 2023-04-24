@@ -151,12 +151,11 @@
 
         a {
           font-size: 26px;
-          margin: 0 2% 20px 2%;
+          padding: 13px 15% 13px 15%;
           border-width: 2px;
           border-color: #fff;
           color: #fff;
-          border-radius: 10px;
-          padding: 10px 15% 10px 15%;
+          border-radius: 15px;
           transition: 0.5s;
 
           &:hover {
