@@ -5,9 +5,9 @@
             <div class="body">
                     <div>Hello</div>
                     <button @click="test()">Test</button>
-                    <!-- <div class="review" v-for=" in arrReviews">
-
-                    </div> -->
+                    <div class="review" v-bind:key="i" v-for="review,i in reviewsArr">
+                        {{ review.rating }}
+                    </div>
             </div>
         </div>
 
@@ -27,6 +27,7 @@
             data() {
                 return {
                     mobile: null,
+                    reviewsArr: [],
                 }
             },
             async mounted() {
