@@ -51,7 +51,7 @@
             .textWrap {
                 margin: 45px;
                 height: 85%;
-                background-color: rgba(255, 255, 255, 0.15);
+                background-color: rgba(0, 0, 0, 0.3);
                 padding: 30px;
                 border-radius: 10px;
 

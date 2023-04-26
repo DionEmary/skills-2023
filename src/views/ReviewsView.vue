@@ -3,10 +3,12 @@
 
         <div class="desktop" v-if="!mobile">
             <div class="body">
-                    <div>Hello</div>
-                    <button @click="test()">Test</button>
                     <div class="review" v-bind:key="i" v-for="review,i in reviewsArr">
-                        {{ review.rating }}
+                        <h2 class="name">{{ review.name }}</h2>
+                        <div class="content">
+                            {{ review.content }}
+                        </div>
+                        <div class="rating"><i class="fa-regular fa-star" style="color: #e8d930;"></i> {{ review.rating }} </div>
                     </div>
             </div>
         </div>
@@ -62,9 +64,39 @@
     
     <style lang="scss" scoped>
 
-    .desktop {
-        .reviewItem {
+    .desktop {  
+        .body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .review {
+                background-color: rgba(255, 255, 255, 0.9);
+                width: 25%;
+                margin: 2.5%;
+                padding: 20px;
+                color: rgb(48, 48, 48);
+                border-radius: 15px;
+                height: auto;
 
+                h2 {
+                    font-size: 38px;
+                    border-bottom: 2px solid;
+                    border-color: rgb(48, 48, 48);
+                    margin: 10px;
+                    font-weight: 600;
+                }
+
+                .content {
+                    margin: 10px;
+                    font-size: 20px;
+                    font-weight: 100;
+                }
+
+                .rating {
+                    margin: 10px;
+                    font-size: 26px;
+                }
+            }
         }
     }
 
@@ -83,6 +115,7 @@
     .body {
         width: 100%;
         height: auto;
+        background-image: url('../assets/hero-bg.png');
     }
     </style>
     
