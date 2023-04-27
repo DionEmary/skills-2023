@@ -5,9 +5,27 @@
             <div class="body">
                 <div class="addReview">
                     <form @submit.prevent="sendReview">
-                        <input type="text" class="nameInput" placeholder="Full Name" v-model="reviewName">
-                        <input type="text" class="reviewInput" placeholder="Write your Review Here!" v-model="reviewContent">
-                        <input type="number" class="ratingInput" placeholder="Rating" v-model="reviewRating">
+
+                        <div class="nameInput">
+                            <input 
+                            type="text" 
+                            placeholder="Full Name" 
+                            v-model="reviewName"
+                            >
+                        </div>
+
+                        <div class="reviewInput">
+                            <input placeholder="e.g. Hello world" v-model="reviewContent">
+                        </div>
+                            
+                        <div class="ratingInput">
+                            <input 
+                            type="number" 
+                            placeholder="Rating" 
+                            v-model="reviewRating"
+                            >
+                        </div>
+
                         <button :disabled="!reviewName || !reviewContent || reviewRating > 5 || reviewRating < 0 || !reviewRating" class="reviewSubmit">Submit Review</button>
                     </form>
                 </div>
@@ -17,7 +35,7 @@
                         <div class="content">
                             {{ review.content }}
                         </div>
-                        <div class="rating"><i class="fa-regular fa-star" style="color: #e8d930;"></i> {{ review.rating }} </div>
+                        <div class="rating"><i class="fa-solid fa-star" style="color: #e8d930;"></i> {{ review.rating }} </div>
                     </div>
                 </div>
             </div>
@@ -97,34 +115,52 @@
     .desktop {  
         .body {
             .addReview {
-                .nameInput {
+                width: 100%;
+                height: 400px;
+                display: flex;
+                flex-wrap: wrap;
 
+                form {
+                    width: 95%;
+                    margin: 2.5%;
+                    background-color: #fff;
+
+                .nameInput {
                 }
 
                 .reviewInput {
 
                 }
 
-                input {
-                    border-width: 2px;
-                    margin: 10px;
-                    border-color: rgba($color: #000000, $alpha: 1.0);
-                }
-                
+                .reviewRating {
 
+                }
+
+                .reviewSubmit {
+                    color: #fff;
+                }
+
+                input {
+                    border-radius: 10px;
+                    border-width: 2px;
+                    border-color: #181818;
+                }
             }
+
+        }
             .reviewBody {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-evenly;
                 .review {
-                    background-color: rgba(255, 255, 255, 0.9);
-                    width: 25%;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    width: 45%;
                     margin: 2.5%;
                     padding: 20px;
                     color: rgb(48, 48, 48);
                     border-radius: 15px;
                     height: auto;
+                    color: white;
 
                     h2 {
                         font-size: 38px;
