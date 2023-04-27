@@ -4,34 +4,70 @@
         <div class="desktop" v-if="!mobile">
             <div class="body">
                 <div class="addReview">
-                    <form @submit.prevent="sendReview">
 
-                        <div class="nameInput">
+                    <form @submit.prevent="sendReview">
+                    <h2>Leave us a Review!</h2>
+                    <div class="nameInput">
+                        <div class="firstNameInput">
                             <input 
                             type="text" 
-                            placeholder="Full Name" 
-                            v-model="reviewName"
+                            placeholder="First Name" 
+                            v-model="reviewFirstName"
+                            size="39"
+                            required
                             >
                         </div>
 
+                        <div class="lastNameInput">
+                            <input 
+                            type="text" 
+                            placeholder="Last Name" 
+                            v-model="reviewLastName"
+                            size="39"
+                            required
+                            >
+                        </div>
+                    </div>
+
                         <div class="reviewInput">
-                            <input placeholder="e.g. Hello world" v-model="reviewContent">
+                            <textarea
+                            placeholder="Write your review here" 
+                            v-model="reviewContent"
+                            rows="4"
+                            cols="41"
+                            required
+                            ></textarea>
                         </div>
                             
                         <div class="ratingInput">
-                            <input 
-                            type="number" 
-                            placeholder="Rating" 
+
+                            <label for="rating">Choose a Rating:</label>
+                            <select   
+                            name="rating"
                             v-model="reviewRating"
+                            label="Rating"
+                            required
                             >
+                                <optgroup label="Star Rating 1-5">
+                                    <option value="1">1 ★</option>
+                                    <option value="1.5">1.5 ★</option>
+                                    <option value="2">2 ★</option>
+                                    <option value="2.5">2.5 ★</option>
+                                    <option value="3">3 ★</option>
+                                    <option value="3.5">3.5 ★</option>
+                                    <option value="4">4 ★</option>
+                                    <option value="4.5">4.5 ★</option>
+                                    <option value="5">5 ★</option>
+                                </optgroup>
+                            </select>
                         </div>
 
-                        <button :disabled="!reviewName || !reviewContent || reviewRating > 5 || reviewRating < 0 || !reviewRating" class="reviewSubmit">Submit Review</button>
+                        <button class="reviewSubmit">Submit Review</button>
                     </form>
                 </div>
                 <div class="reviewBody">
                     <div class="review" v-bind:key="i" v-for="review,i in reviewsArr">
-                        <h2 class="name">{{ review.name }}</h2>
+                        <h2 class="name">{{ review.firstName }} {{ review.lastName }}</h2>
                         <div class="content">
                             {{ review.content }}
                         </div>
@@ -54,17 +90,20 @@
         import { v4 as uuidv4 } from 'uuid'
         import { ref } from "vue"
 
-                        const reviewName = ref('')
+                        const reviewFirstName = ref('')
+                        const reviewLastName = ref('')
                         const reviewContent = ref('')
                         const reviewRating = ref('')
 
                         const sendReview = () => {
                             addDoc(collection(db, "reviews"), {
-                                name: reviewName.value,
+                                firstName: reviewFirstName.value,
+                                lastName: reviewLastName.value,
                                 content: reviewContent.value,
                                 rating: reviewRating.value,
                             });
-                            reviewName.value = ''
+                            reviewFirstName.value = ''
+                            reviewLastName.value = ''
                             reviewContent.value = ''
                             reviewRating.value = ''
                         }
@@ -116,34 +155,66 @@
         .body {
             .addReview {
                 width: 100%;
-                height: 400px;
+                height: auto;
                 display: flex;
                 flex-wrap: wrap;
 
                 form {
-                    width: 95%;
-                    margin: 2.5%;
-                    background-color: #fff;
+                    width: 55%;
+                    margin: 2.5% 22.5% 2.5% 22.5%;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    padding: 10px 20px 10px 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-radius: 15px;
 
+                h2 {
+                    font-size: 48px;
+                    font-weight: 600;
+                    width: 100%;
+                    text-align: center;
+                }
                 .nameInput {
+                    display: block;
+                    margin: 0 auto 0 auto;
+                    padding: 0 0 0 1%;
+                                
+                    .firstNameInput {   
+                        margin-bottom: 15px;
+                    }
+                    .lastNameInput {
+                        margin-bottom: 30px;
+                    }
                 }
 
-                .reviewInput {
 
+                .reviewInput {   
+                    width: 100%;              
                 }
 
                 .reviewRating {
-
+                    width: 100%;
                 }
 
                 .reviewSubmit {
-                    color: #fff;
+                    padding: 0 0 0 1%;
+                    width: 100%;
+                    color: #000;
                 }
 
                 input {
-                    border-radius: 10px;
                     border-width: 2px;
-                    border-color: #181818;
+                    border-color: #bdbdbd;
+                }
+
+                textarea {
+                    border-width: 2px;
+                    border-color: #bdbdbd;
+                }
+                
+                select {
+                    border-width: 2px;
+                    border-color: #bdbdbd;
                 }
             }
 
