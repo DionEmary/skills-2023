@@ -14,6 +14,7 @@
                             placeholder="First Name" 
                             v-model="reviewFirstName"
                             size="39"
+                            maxlength="1"
                             required
                             >
                         </div>
@@ -28,7 +29,7 @@
                             >
                         </div>
                     </div>
-
+                    <div class="reviewWrap">
                         <div class="reviewInput">
                             <textarea
                             placeholder="Write your review here" 
@@ -59,10 +60,11 @@
                                     <option value="4.5">4.5 ★</option>
                                     <option value="5">5 ★</option>
                                 </optgroup>
-                            </select>
-                        </div>
-
+                            </select>    
+                        </div>                        
                         <button class="reviewSubmit">Submit Review</button>
+                    </div>
+
                     </form>
                 </div>
                 <div class="reviewBody">
@@ -168,6 +170,34 @@
                     flex-wrap: wrap;
                     border-radius: 15px;
 
+                .reviewWrap {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+                .reviewInput {   
+                    width: 100%;              
+                }
+
+                .reviewRating {
+                    width: 100%;
+                }
+                .reviewSubmit {
+                    margin: 15px 41% 0 41.5%;
+                    color: #000;
+                    background-color: white;
+                    padding: 5px;
+                    border-radius: 10px;
+                    transition: 0.1s ease-in;
+                    
+                    &:hover {
+                        background-color: #2b2b2b;
+                        color: #fff
+                    }
+                }
+                }
+
                 h2 {
                     font-size: 48px;
                     font-weight: 600;
@@ -188,28 +218,18 @@
                 }
 
 
-                .reviewInput {   
-                    width: 100%;              
-                }
-
-                .reviewRating {
-                    width: 100%;
-                }
-
-                .reviewSubmit {
-                    padding: 0 0 0 1%;
-                    width: 100%;
-                    color: #000;
-                }
 
                 input {
                     border-width: 2px;
                     border-color: #bdbdbd;
+                    border-radius: 5px;
                 }
 
                 textarea {
                     border-width: 2px;
                     border-color: #bdbdbd;
+                    border-radius: 5px;
+                    margin-left: 5px;
                 }
                 
                 select {
