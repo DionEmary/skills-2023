@@ -1,12 +1,27 @@
 <template>
     <div class="header"></div>
-    <div class="body">
-        <div class="item">
-            <div class="textWrap">
-                <h2>About our Company</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsam quidem necessitatibus modi nostrum debitis dolor magnam quae, vero omnis id assumenda quod delectus nemo, error veniam dolore provident quibusdam, hic odio numquam consectetur. Hic rem ratione libero enim corrupti sint quod blanditiis quia nihil aut temporibus, cumque maiores mollitia ad provident voluptate itaque facere omnis quis natus neque saepe. Optio laudantium iure eos ex fuga, at porro consequuntur illum obcaecati dolores accusamus dignissimos perferendis doloribus laboriosam, architecto minima rerum veniam magnam. Iure, natus. Sint quia error facere neque quis.
-                </p>
+    <div class="desktop" v-if="!mobile">
+        <div class="body">
+            <div class="item">
+                <div class="textWrap">
+                    <h2>About our Company</h2>
+                    <p>
+                        Our Company has a goal to provide people (service) in a fast time and a friendly enviorment. Our Company has been doing this for XXXX Years and has always strived to be better as time goes on. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, similique. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile" v-if="mobile">
+        <div class="body">
+            <div class="item">
+                <div class="textWrap">
+                    <h2>About our Company</h2>
+                    <p>
+                        Our Company has a goal to provide people (service) in a fast time and a friendly enviorment. Our Company has been doing this for XXXX Years and has always strived to be better as time goes on. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, similique. 
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -27,9 +42,9 @@
         methods: {
             checkScreen() {
                 this.windowWidth = window.innerWidth;
-                if (this.windowWidth <= 1300) {
-                    this.mobile = true;
-                    return;
+                if(this.windowWidth <= 700){
+                        this.mobile = true;
+                        return;
                     }
                 this.mobile = false;
                 return;
@@ -40,35 +55,73 @@
     
     <style lang="scss" scoped>
 
-    .body {
-        display: flex;
-        flex-wrap: wrap;
+    .desktop {
+        .body {
+            display: flex;
+            flex-wrap: wrap;
 
-        .item {
-            width: 100%;
-            height: 600px;
-            background-image: url('../assets/hero-bg.png');
-            .textWrap {
-                margin: 45px;
-                height: 85%;
-                background-color: rgba(0, 0, 0, 0.3);
-                padding: 30px;
-                border-radius: 10px;
+            .item {
+                width: 100%;
+                height: auto;
+                background-image: url('../assets/hero-bg.png');
+                .textWrap {
+                    margin: 20px;
+                    height: 90%;
+                    background-color: rgba(0, 0, 0, 0.3);
+                    padding: 30px;
+                    border-radius: 10px;
 
-                h2 {
-                    font-size: 58px;
-                    font-weight: 500;
-                    border-bottom: 2px solid;
-                    border-color: #fff;
-                    margin: 0 3% 20px 1%;
-                    color: #fff;
-                    padding-right: 10px;
+                    h2 {
+                        font-size: 52px;
+                        font-weight: 500;
+                        border-bottom: 2px solid;
+                        border-color: #fff;
+                        margin: 0 3% 20px 1%;
+                        color: #fff;
+                        padding-right: 10px;
+                    }
+
+                    p {
+                        font-size: 34px;
+                        margin: 20px 2% 20px 2%;
+                        color: #fff;
+                    }
                 }
+            }
+        }
+    }
 
-                p {
-                    font-size: 26px;
-                    margin: 0 2% 20px 2%;
-                    color: #fff;
+    .mobile {
+        .body {
+            display: flex;
+            flex-wrap: wrap;
+
+            .item {
+                width: 100%;
+                height: auto;
+                background-image: url('../assets/hero-bg.png');
+                .textWrap {
+                    margin: 25px 0 25px 0;
+                    height: 90%;
+                    background-color: rgba(0, 0, 0, 0.3);
+                    padding: 20px;
+                    border-radius: 10px;
+
+                    h2 {
+                        font-size: 32px;
+                        font-weight: 500;
+                        border-bottom: 2px solid;
+                        border-color: #fff;
+                        margin: 0 3% 10px 1%;
+                        color: #fff;
+                        padding-right: 10px;
+                    }
+
+                    p {
+                        font-size: 22px;
+                        margin: 0 2% 5px 2%;
+                        color: #fff;
+                    }
                 }
             }
         }

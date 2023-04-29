@@ -49,16 +49,16 @@
                             label="Rating"
                             required
                             >
-                                <optgroup label="Star Rating 1-5">
-                                    <option value="1">1 ★</option>
-                                    <option value="1.5">1.5 ★</option>
-                                    <option value="2">2 ★</option>
-                                    <option value="2.5">2.5 ★</option>
-                                    <option value="3">3 ★</option>
-                                    <option value="3.5">3.5 ★</option>
-                                    <option value="4">4 ★</option>
+                                <optgroup label="Star Rating">
+                                    <option value="5">5 ★</option>                                    
                                     <option value="4.5">4.5 ★</option>
-                                    <option value="5">5 ★</option>
+                                    <option value="4">4 ★</option>
+                                    <option value="3.5">3.5 ★</option>
+                                    <option value="3">3 ★</option>
+                                    <option value="2.5">2.5 ★</option>
+                                    <option value="2">2 ★</option>
+                                    <option value="1.5">1.5 ★</option>                                   
+                                    <option value="1">1 ★</option>
                                 </optgroup>
                             </select>    
                         </div>                        
@@ -221,20 +221,20 @@
 
                 input {
                     border-width: 2px;
-                    border-color: #bdbdbd;
+                    border-color: #fff;
                     border-radius: 5px;
                 }
 
                 textarea {
                     border-width: 2px;
-                    border-color: #bdbdbd;
+                    border-color: #fff;
                     border-radius: 5px;
                     margin-left: 5px;
                 }
                 
                 select {
                     border-width: 2px;
-                    border-color: #bdbdbd;
+                    border-color: #fff;
                 }
             }
 
