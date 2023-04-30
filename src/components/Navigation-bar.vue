@@ -8,7 +8,7 @@
                 <li><RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink></li>
                 <li><RouterLink class="link" :to="{ name: 'about' }">About Us</RouterLink></li>
                 <li><RouterLink class="link" :to="{ name: 'services' }">Services</RouterLink></li>                
-                <li><RouterLink class="link" :to="{ name: 'contact' }">Contact Us</RouterLink></li>
+                <li><RouterLink class="link" :to="{ name: 'support' }">Contact Us</RouterLink></li>
                 <li><RouterLink class="link" :to="{ name: 'review' }">Leave a Review</RouterLink></li>
             </ul>
             <div class="icon">
@@ -19,7 +19,7 @@
                     <li><RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink></li>
                     <li><RouterLink class="link" :to="{ name: 'about' }">About Us</RouterLink></li>
                     <li><RouterLink class="link" :to="{ name: 'services' }">Services</RouterLink></li>
-                    <li><RouterLink class="link" :to="{ name: 'contact' }">Contact Us</RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: 'support' }">Contact Us</RouterLink></li>
                     <li><RouterLink class="link" :to="{ name: 'review' }">Leave a Review</RouterLink></li>
                 </ul>
             </transition>
@@ -114,6 +114,7 @@ header {
             transition: 0.5s ease all;
             padding-bottom: 4px;
             border-bottom: 1px solid transparent;
+            font-size: 18px;
 
             &:hover {
                 color: #00afea;
@@ -162,7 +163,7 @@ header {
             flex-direction: column;
             position: fixed;
             width: 100%;
-            max-width: 250px;
+            max-width: 200px;
             height: 100%;
             background-color: #fff;
             top: 0;

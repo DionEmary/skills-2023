@@ -65,7 +65,7 @@
                 height: auto;
                 background-image: url('../assets/hero-bg.png');
                 .textWrap {
-                    margin: 20px;
+                    margin: 20px 200px 20px 200px;
                     height: 90%;
                     background-color: rgba(0, 0, 0, 0.3);
                     padding: 30px;
