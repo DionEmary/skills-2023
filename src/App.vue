@@ -112,7 +112,7 @@ export default {
   .footer {
     color: #fff;
     width: 100%;
-    height: auto;
+    height: 400px;
     background-color: #363636;
     display: flex;
 
