@@ -3,6 +3,11 @@
 
         <div class="desktop" v-if="!mobile">
             <div class="body">
+                <div class="failedWrap" v-if="!databaseActive">
+                    <div class="failed">
+                        <h2>Failed</h2>
+                    </div>
+                </div>
                 <div class="addReview" v-if="databaseActive">
 
                     <form @submit.prevent="sendReview">
@@ -80,6 +85,9 @@
 
         <div class="mobile" v-if="mobile">
             <div class="body">
+                <div class="failed" v-if="!databaseActive">
+                    Failed
+                </div>
                 <div class="addReview" v-if="databaseActive">
                     <form @submit.prevent="sendReview">
                     <h2>Leave us a Review!</h2>
@@ -229,6 +237,31 @@
 
     .desktop {  
         .body {
+            .failedWrap {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+
+                .failed {
+                    width: 55%;
+                    margin: 2.5% 22.5% 2.5% 22.5%;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    padding: 10px 20px 10px 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-radius: 15px;
+
+                    h2 {
+                        font-size: 48px;
+                        font-weight: 600;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }                
+            }
+
+
             .addReview {
                 width: 100%;
                 height: auto;
@@ -350,6 +383,29 @@
 
     .mobile {
         .body {
+            .failedWrap {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+
+                .failed {
+                    width: 95%;
+                    margin: 2.5% 2.5% 2.5% 2.5%;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    padding: 10px 20px 10px 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-radius: 15px;
+
+                    h2 {
+                            font-size: 32px;
+                            font-weight: 600;
+                            width: 100%;
+                            text-align: center;
+                    }
+                }                
+            }
             .addReview {
                 width: 100%;
                 height: auto;

@@ -15,7 +15,11 @@
                     </p>
                 </div>
             </div>
-            <div class="supportWrap">
+            <div class="failed" v-if="!databaseActive">
+                Failed
+            </div>
+
+            <div class="supportWrap" v-if="databaseActive">
                 <form @submit.prevent="sendIssue" v-if="!issueSent">
                     <h2>Submit a Support Ticket</h2>
                     <div class="infoWrap">
@@ -76,7 +80,10 @@
                     </p>
                 </div>
             </div>
-            <div class="supportWrap">
+            <div class="failed" v-if="!databaseActive">
+                Failed
+            </div>
+            <div class="supportWrap" v-if="databaseActive">
                 <form @submit.prevent="sendIssue" v-if="!issueSent">
                     <h2>Submit a Support Ticket</h2>
                     <div class="infoWrap">
