@@ -15,9 +15,11 @@
                     </p>
                 </div>
             </div>
-            <div class="failed" v-if="!databaseActive">
-                Failed
-            </div>
+            <div class="failedWrap" v-if="!databaseActive">
+                    <div class="failed">
+                        <h2>Failed</h2>
+                    </div>
+                </div>
 
             <div class="supportWrap" v-if="databaseActive">
                 <form @submit.prevent="sendIssue" v-if="!issueSent">
@@ -79,10 +81,13 @@
                         Our response times may vary as we recieve more tickets however our expected is 3-5 Buissness Days
                     </p>
                 </div>
-            </div>
-            <div class="failed" v-if="!databaseActive">
-                Failed
-            </div>
+            </div>      
+                <div class="failedWrap" v-if="!databaseActive">
+                    <div class="failed">
+                        <h2>Failed</h2>
+                    </div>
+                </div>
+
             <div class="supportWrap" v-if="databaseActive">
                 <form @submit.prevent="sendIssue" v-if="!issueSent">
                     <h2>Submit a Support Ticket</h2>
@@ -162,6 +167,7 @@ export default {
         return {
             mobile: null,
             supportArr: [],
+            databaseActive: true,
         }
     },
     async mounted() {
@@ -204,6 +210,29 @@ export default {
 
     .desktop {
         .body {
+            .failedWrap {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+
+                .failed {
+                    width: 55%;
+                    margin: 2.5% 22.5% 2.5% 22.5%;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    padding: 10px 20px 10px 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-radius: 15px;
+
+                    h2 {
+                        font-size: 48px;
+                        font-weight: 600;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }                
+            }
             .supportTextWrap {
                 width: 100%;
                 height: auto;
@@ -346,6 +375,29 @@ export default {
 
     .mobile {
         .body {
+            .failedWrap {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+
+                .failed {
+                    width: 95%;
+                    margin: 2.5% 2.5% 2.5% 2.5%;
+                    background-color: rgba(255, 255, 255, 0.4);
+                    padding: 10px 20px 10px 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    border-radius: 15px;
+
+                    h2 {
+                        font-size: 48px;
+                        font-weight: 600;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }                
+            }
             .supportTextWrap {
                 width: 100%;
                 height: auto;

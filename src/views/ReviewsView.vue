@@ -9,7 +9,6 @@
                     </div>
                 </div>
                 <div class="addReview" v-if="databaseActive">
-
                     <form @submit.prevent="sendReview">
                     <h2>Leave us a Review!</h2>
                     <div class="nameInput">
@@ -198,6 +197,7 @@
                 return {
                     mobile: null,
                     reviewsArr: [],
+                    databaseActive: true,
                 }
             },
             async mounted() {
