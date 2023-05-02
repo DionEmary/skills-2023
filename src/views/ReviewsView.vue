@@ -70,13 +70,22 @@
 
                     </form>
                 </div>
-                <div class="reviewBody">
+                <div class="reviewBody" v-if="databaseActive">
                     <div class="review" v-bind:key="i" v-for="review,i in reviewsArr">
                         <h2 class="name">{{ review.firstName }} {{ review.lastName }}</h2>
                         <div class="content">
                             {{ review.content }}
                         </div>
                         <div class="rating"><i class="fa-solid fa-star" style="color: #e8d930;"></i> {{ review.rating }} </div>
+                    </div>
+                </div>
+                <div class="reviewBody" v-if="!databaseActive">
+                    <div class="review">
+                        <h2 class="name">Jerry Berry</h2>
+                        <div class="content">
+                            This is a good product
+                        </div>
+                        <div class="rating"><i class="fa-solid fa-star" style="color: #e8d930;"></i>5</div>
                     </div>
                 </div>
             </div>
@@ -149,13 +158,22 @@
 
                     </form>
                 </div>
-                <div class="reviewBody">
+                <div class="reviewBody" v-if="databaseActive">
                     <div class="review" v-bind:key="i" v-for="review,i in reviewsArr">
                         <h2 class="name">{{ review.firstName }} {{ review.lastName }}</h2>
                         <div class="content">
                             {{ review.content }}
                         </div>
                         <div class="rating"><i class="fa-solid fa-star" style="color: #e8d930;"></i> {{ review.rating }} </div>
+                    </div>
+                </div>
+                <div class="reviewBody" v-if="!databaseActive">
+                    <div class="review">
+                        <h2 class="name">Jerry Berry</h2>
+                        <div class="content">
+                            This is a good product
+                        </div>
+                        <div class="rating"><i class="fa-solid fa-star" style="color: #e8d930;"></i>5</div>
                     </div>
                 </div>
             </div>    
@@ -196,7 +214,7 @@
             data() {
                 return {
                     mobile: null,
-                    reviewsArr: [],
+                    reviewsArr: [ ],
                     databaseActive: true,
                 }
             },
