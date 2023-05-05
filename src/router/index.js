@@ -18,15 +18,15 @@ const routes = [
     component: () => import('../views/SupportView.vue')
   },
   {
-    path: '/services',
-    name: 'services',
-    component: () => import('../views/ServicesView.vue')
+    path: '/products',
+    name: 'products',
+    component: () => import('../views/ProductsView.vue')
   },
   {
     path: '/review',
     name: 'review',
     component: () => import('../views/ReviewsView.vue')
-  }
+  },
 ]
 
 const router = createRouter({

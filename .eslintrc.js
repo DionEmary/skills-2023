@@ -16,5 +16,9 @@ module.exports = {
     'vue/no-unused-vars': 'off',
     'no-unused-vars': 'off',
     'vue/no-use-v-if-with-v-for': 'off',
+    'vue/no-parsing-error': 'off',
+    'no-cond-assign': 'off',
+    'no-constant-condition': 'off',
+    'no-undef': 'off',
   }
 }

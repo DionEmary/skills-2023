@@ -8,24 +8,23 @@
       <div class="footerNav">
         <RouterLink to="/">Home</RouterLink><br/><br/>
         <RouterLink to="/about">About Us</RouterLink><br/><br/>
-        <RouterLink to="/services">Services</RouterLink><br/><br/>
+        <RouterLink to="/products">Products</RouterLink><br/><br/>
         <RouterLink to="/support">Contact Us</RouterLink><br/><br/>
-        <RouterLink to="/review">Review</RouterLink>
+        <RouterLink to="/review">Review</RouterLink><br/><br/>
       </div>
       <div class="contactInfo">
-        123 Sesame Street SE <br/>
-        Calgary, AB, Canada, T6K 1L7 <br/><br/>
-        <a href="tel:452-235-8567">452-235-8567</a><br/>
-        <a href = "mailto: dione1@educbe.ca">randomEmail@random.com</a>
-
-      </div>
-      <div class="mapWrap">
-        <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.478974459961!2d-114.06511712300853!3d51.04424314443221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170020601a341%3A0xb30c652b03bd63b6!2sCalgary%20Tower%2C%20Calgary%2C%20AB!5e0!3m2!1sen!2sca!4v1682826402147!5m2!1sen!2sca" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <h3>Main Contact Info</h3>
+        <a href="tel:403.555.0635">+1 403-555-0635</a><br/>
+        <a href="mailto: info@SpookyPopUps.com">info@SpookyPopUps.com</a> 
+        <h3>Accounting Contact Info</h3>
+        <a href="tel:403.556.0635">+1 403-556-0635</a><br/>
+        <a href="mailto: accounting@SpookyPopUps.com">accounting@SpookyPopUps.com</a>
+        <div class="socials">
+          <i class="fa-brands fa-square-facebook fa-2xl"></i>
+          <i class="fa-brands fa-square-twitter fa-2xl"></i>
+          <i class="fa-brands fa-square-instagram fa-2xl"></i>           
+        </div> 
+        
       </div>
     </div>
   </div>
@@ -33,19 +32,17 @@
   <div class="mobile" v-if="mobile">
     <div class="footer">
       <div class="contactInfo">
-        123 Sesame Street SE<br/>
-        Calgary, AB, Canada, T6K 1L7 <br/>
-        <a href="tel:452-235-8567">452-235-8567</a><br/>
-        <a href = "mailto: dione1@educbe.ca">randomEmail@random.com</a>
-
-      </div>
-      <div class="mapWrap">
-        <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.478974459961!2d-114.06511712300853!3d51.04424314443221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170020601a341%3A0xb30c652b03bd63b6!2sCalgary%20Tower%2C%20Calgary%2C%20AB!5e0!3m2!1sen!2sca!4v1682826402147!5m2!1sen!2sca" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <h3>Main Contact Info</h3>
+        <a href="tel:403.555.0635">+1 403-555-0635</a><br/>
+        <a href="mailto: info@SpookyPopUps.com">info@SpookyPopUps.com</a> 
+        <h3>Accounting Contact Info</h3>
+        <a href="tel:403.556.0635">+1 403-556-0635</a><br/>
+        <a href="mailto: accounting@SpookyPopUps.com">accounting@SpookyPopUps.com</a>
+        <div class="socials">
+          <i class="fa-brands fa-square-facebook fa-2xl"></i>
+          <i class="fa-brands fa-square-twitter fa-2xl"></i>
+          <i class="fa-brands fa-square-instagram fa-2xl"></i>           
+        </div> 
       </div>
     </div>
   </div>
@@ -84,12 +81,12 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Arimo&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Cabin', sans-serif;
   font-weight: 400;
 }
 
@@ -113,7 +110,7 @@ export default {
     color: #fff;
     width: 100%;
     height: 400px;
-    background-color: #363636;
+    background-color: #080808;
     display: flex;
 
     .footerNav {
@@ -139,13 +136,13 @@ export default {
     }
 
     .contactInfo {
-      width: 50%;
+      width: 80%;
       height: auto;
       text-align: center;
       margin-top: auto;
       margin-bottom: auto;
       padding: 20px;
-      font-size: 26px;
+      font-size: 22px;
       color: #747474;
 
       a {
@@ -153,21 +150,21 @@ export default {
         border-bottom: 2px solid transparent;
       }
 
+      h3 {
+        font-size: 26px;
+        border-bottom: 2px solid;
+        border-color: #9c5600;
+        margin: 20px 35% 20px 35%;
+      }
+
+      i {
+        padding: 40px;
+      }
+
 
       a:hover {
-        color: #fff;
-        border-color: #fff;
-      }
-    }
-    
-    .mapWrap {
-      margin: 20px 20px 20px 50px;
-      height: auto;
-      width: 30%;
-
-      iframe {
-        width: 100%;
-        height: 100%;
+        color: #9c5600;
+        border-color: #9c5600;
       }
     }
   }
@@ -178,37 +175,38 @@ export default {
     color: #fff;
     width: 100%;
     height: auto;
-    background-color: #363636;
+    background-color: #080808;
     display: flex;
 
     .contactInfo {
-      width: 50%;
+      width: 100%;
       height: auto;
       text-align: center;
       margin: auto 15px auto 10px;
-      font-size: 13px;
+      font-size: 16px;
       color: #747474;
+      padding: 20px;
 
       a {
         transition: 0.2s ease-in;
         border-bottom: 2px solid transparent;
       }
 
+      h3 {
+        font-size: 18px;
+        border-bottom: 2px solid;
+        border-color: #9c5600;
+        margin: 20px 25% 20px 25%;
+      }
+
+      i {
+        padding: 40px;
+      }
+
 
       a:hover {
-        color: #fff;
-        border-color: #fff;
-      }
-    }
-    
-    .mapWrap {
-      margin: 2px 2px 2px 15px;
-      height: auto;
-      width: 50%;
-
-      iframe {
-        width: 100%;
-        height: 100%;
+        color: #9c5600;
+        border-color: #9c5600;
       }
     }
   }

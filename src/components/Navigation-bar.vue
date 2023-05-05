@@ -7,19 +7,19 @@
             <ul v-show="!mobile" class="navigation">
                 <li><RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink></li>
                 <li><RouterLink class="link" :to="{ name: 'about' }">About Us</RouterLink></li>
-                <li><RouterLink class="link" :to="{ name: 'services' }">Services</RouterLink></li>                
-                <li><RouterLink class="link" :to="{ name: 'support' }">Contact Us</RouterLink></li>
+                <li><RouterLink class="link" :to="{ name: 'products' }">Products</RouterLink></li>                
+                <li><RouterLink class="link" :to="{ name: 'support' }">Find/Contact Us</RouterLink></li>
                 <li><RouterLink class="link" :to="{ name: 'review' }">Leave a Review</RouterLink></li>
             </ul>
             <div class="icon">
-                <i @click="toggleMobileNav" v-show="mobile" class="fa-solid fa-bars" :class="{ 'icon-active' : mobileNav }"></i>
+                <i @click="toggleMobileNav" v-show="mobile" class="fa-solid fa-bars" style="color: #ffffff;" :class="{ 'icon-active' : mobileNav }"></i>
             </div>
             <transition name="mobile-nav">
                 <ul v-show="mobileNav" class="dropdown-nav">
                     <li><RouterLink class="link" :to="{ name: 'home' }">Home</RouterLink></li>
                     <li><RouterLink class="link" :to="{ name: 'about' }">About Us</RouterLink></li>
-                    <li><RouterLink class="link" :to="{ name: 'services' }">Services</RouterLink></li>
-                    <li><RouterLink class="link" :to="{ name: 'support' }">Contact Us</RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: 'products' }">Products</RouterLink></li>
+                    <li><RouterLink class="link" :to="{ name: 'support' }">Find/Contact Us</RouterLink></li>
                     <li><RouterLink class="link" :to="{ name: 'review' }">Leave a Review</RouterLink></li>
                 </ul>
             </transition>
@@ -62,7 +62,7 @@ export default{
 
         checkScreen() {
             this.windowWidth = window.innerWidth;
-            if (this.windowWidth <= 750) {
+            if (this.windowWidth <= 850) {
                 this.mobile = true;
                 return;
             }
@@ -77,12 +77,12 @@ export default{
 <style lang="scss" scoped>
 
 header {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(20, 20, 20, 0.9);
     z-index: 99;
     width: 100%;
     position: fixed;
     transition: 0.5s ease all;
-    color: white;
+    color: black;
 
     nav {
         display: flex;
@@ -110,15 +110,14 @@ header {
         }
 
         .link {
-            font-size: 13.5px;
             transition: 0.5s ease all;
             padding-bottom: 4px;
             border-bottom: 1px solid transparent;
             font-size: 18px;
 
             &:hover {
-                color: #00afea;
-                border-color: #00afea;
+                color: #9c5600;
+                border-color: #9c5600;
             }
         }
 
@@ -127,7 +126,7 @@ header {
             align-items: center;
 
             img {
-                width: 50px;
+                width: 80px;
                 transition: 0.5s ease all;
             }
         }
@@ -193,16 +192,17 @@ header {
     }
 }
     .scrolled-nav {
-        background-color: #000;
+        background-color: rgb(2, 2, 2);
         box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.6);
 
         nav {
             padding: 8px 0;
 
             .branding {
+
                 img {
-                    width: 40px;
-                    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+                    width: 60px;
+                    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.6);
                 }
             }
         }

@@ -6,9 +6,9 @@ const firebaseConfig = {
   authDomain: "skills-2023.firebaseapp.com",
   databaseURL: "https://skills-2023-default-rtdb.firebaseio.com",
   projectId: "skills-2023",
-  storageBucket: "skills-2023.appspot.com",
   messagingSenderId: "967979212095",
-  appId: "1:967979212095:web:4cca0464cd13ee6566078a"
+  appId: "1:967979212095:web:4cca0464cd13ee6566078a",
+  storageBucket: 'gs://skills-2023.appspot.com',
 };
 
 const app = initializeApp(firebaseConfig);
